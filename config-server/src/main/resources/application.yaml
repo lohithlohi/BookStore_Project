@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          skip-ssl-validation: true
+          uri: https://github.com/lohithlohi/BookStore_Project_Config_Files
+          clone-on-start: true
+server:
+  port: 8888
+
+logging:
+#  pattern:
+#    console: "%msg%n"
+  level:
+    org.springframework.cloud.config: DEBUG

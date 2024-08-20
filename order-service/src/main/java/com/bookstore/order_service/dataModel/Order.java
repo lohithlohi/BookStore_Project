@@ -11,10 +11,11 @@ import lombok.*;
 @AllArgsConstructor
 @Setter @Getter
 @Data
+@Table(name = "orders_data")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
@@ -27,7 +28,6 @@ public class Order {
     @Positive
     private Integer quantity;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }

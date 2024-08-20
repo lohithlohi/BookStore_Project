@@ -1,13 +1,21 @@
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
   application:
-    name=discovery-service
+    name: discovery-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: discovery-service
 
-server:
-  port: 8761
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    wait-time-in-ms-when-sync-empty: 0
+#server:
+#  port: 8761
+#
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#  server:
+#    wait-time-in-ms-when-sync-empty: 0
+#
+#
